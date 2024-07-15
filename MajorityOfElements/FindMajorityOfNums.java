@@ -1,3 +1,5 @@
+package MajorityOfElements;
+
 import java.util.*;
 
 public class FindMajorityOfNums {
