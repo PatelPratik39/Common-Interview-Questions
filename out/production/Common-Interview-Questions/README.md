@@ -7,3 +7,6 @@
         
 # 2. Union of 2 Arrays - Hashing
     - means there will be 2 arrays and we need to combine it one witout repetation and provide the size of united array
+
+# 3. Intersection of 2 arrays - HASHING
+    - means there will be 2 arrays and we need to store common elements  and provide the size of united array
