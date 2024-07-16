@@ -103,6 +103,7 @@ public class LinkedList {
     }
 
 
+
     public static void main ( String[] args ) {
         LinkedList linkedList = new LinkedList();
         linkedList.addFirstNode("a");
