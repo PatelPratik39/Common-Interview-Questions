@@ -10,3 +10,8 @@
 
 # 3. Intersection of 2 arrays - HASHING
     - means there will be 2 arrays and we need to store common elements  and provide the size of united array
+# Queue - 
+    - A queue follows FIFO principle
+    - increases space utilization efficiency by conecting both the eneds of an array
+    - best approcch for some scheduling and streaming tasks .
+    - Time complexity - O(1) constant that is great and space complexity is O(n)

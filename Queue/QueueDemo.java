@@ -1,5 +1,11 @@
 package Queue;
 
+/*
+
+Queue is a linear data structure that follows FIFO Principle
+Key Operations: 1. Enqueue, 2. Dequeue, 3.Peek/front, 4. isEmpty = -1, 5. isFull = 0
+ */
+
 public class QueueDemo {
 
 //    using static clas and methods, so I can use those static functions in to other classes
