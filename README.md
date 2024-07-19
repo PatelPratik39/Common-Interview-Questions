@@ -54,3 +54,9 @@
 *  Space Complexity for BST 
   - The space complexity id linear as each node requires constant space
     - O(n)
+
+#   what is depth-First Search (DFS)?
+    - Level order Traversal using queue means DFS - Depth First Search
+
+#  what is Breadth First Search (BFS)?
+    - PreOrder,InORder, PostOrder are known as BreadthFirst Search

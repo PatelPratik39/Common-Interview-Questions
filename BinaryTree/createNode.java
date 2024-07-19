@@ -61,13 +61,30 @@ public class createNode {
             System.out.print(root.data + " -> ");
             inOrder(root.right);
         }
+
+    //      PostOrder Traversal
+    /*
+        Time Complexity will be O(n) -> Linear order
+
+     */
         public static void postOrder(Node root){
             if(root == null){
                 return ;
             }
+            postOrder(root.left);
             postOrder(root.right);
             System.out.print(root.data + " -> ");
-            postOrder(root.left);
+        }
+
+    //      Level Order Traversal
+    /*
+        Time Complexity will be O(n)
+     */
+
+        public static void levelOrder(Node root){
+            if(root == null){
+                return ;
+            }
         }
     }
     public static void main ( String[] args ) {
@@ -85,5 +102,8 @@ public class createNode {
         System.out.println( " ");
         System.out.print("4. Post Order Traversal : ");
         postOrder(root);
+        System.out.println( " ");
+        System.out.print("4. Post Order Traversal : ");
+        levelOrder(root);
     }
 }
