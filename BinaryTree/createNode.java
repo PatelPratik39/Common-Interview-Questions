@@ -1,5 +1,7 @@
 package BinaryTree;
 
+import static BinaryTree.createNode.BinaryTree.*;
+
 public class createNode {
 
 //    let's create a node first
@@ -30,12 +32,58 @@ public class createNode {
 
             return newNode;
         }
+
+//        Pre-Order Traversal from root node
+    /*
+    Time Complexity is O(n) because we traversing each node one by one.
+
+     */
+        public static void preOrder(Node root){
+
+            if(root == null){
+                return;
+            }
+            System.out.print(root.data + " -> ");
+            preOrder(root.left);
+            preOrder(root.right);
+        }
+
+//      InOrder Traversal
+    /*
+        Time Complexity will be O(n)
+
+     */
+        public static void inOrder(Node root){
+            if(root == null){
+                return;
+            }
+            inOrder(root.left);
+            System.out.print(root.data + " -> ");
+            inOrder(root.right);
+        }
+        public static void postOrder(Node root){
+            if(root == null){
+                return ;
+            }
+            postOrder(root.right);
+            System.out.print(root.data + " -> ");
+            postOrder(root.left);
+        }
     }
     public static void main ( String[] args ) {
         int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
 
         BinaryTree tree = new BinaryTree();
         Node root = tree.buildTree(nodes); // calling buildTree(node) method and storing into tree root od node
-        System.out.println(root.data); // print all the data from
+        System.out.print("1. Root Node : ");
+        System.out.println(root.data);
+        System.out.print("2. Pre Order Traversal : ");// print all the data from
+        preOrder(root);
+        System.out.println(" ");
+        System.out.print("3. In Order Traversal : ");
+        inOrder(root);
+        System.out.println( " ");
+        System.out.print("4. Post Order Traversal : ");
+        postOrder(root);
     }
 }
