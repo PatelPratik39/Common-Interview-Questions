@@ -126,6 +126,18 @@ public class createNode {
 
             return leftNode + rightNode + 1;
         }
+
+    //        Count of Node
+//    Time Complexity will be O(n)
+        public static int sumOfNodes(Node root){
+            if(root ==null){
+                return 0;
+            }
+            int leftSum = sumOfNodes(root.left);
+            int rightSum = sumOfNodes(root.right);
+
+            return leftSum + rightSum + root.data;
+        }
     }
 
 
@@ -150,6 +162,8 @@ public class createNode {
 
 //        count the nodes
         System.out.println("5. Count The Nodes : " + countOfNodes(root));
+        //        Sum of the nodes
+        System.out.println("5. Count The Nodes : " + sumOfNodes(root));
 
     }
 }
