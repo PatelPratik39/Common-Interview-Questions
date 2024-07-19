@@ -104,7 +104,7 @@ public class createNode {
                         queue.add(null);
                     }
                 } else {
-                    System.out.println(currNode.data);
+                    System.out.print(currNode.data);
                     if (currNode.left != null){
                         queue.add(currNode.left);
                     }
@@ -138,6 +138,19 @@ public class createNode {
 
             return leftSum + rightSum + root.data;
         }
+
+//        Calculate the Height of the Tree
+//    Time Complexity will be O(n)
+        public static int height(Node root){
+            if(root == null){
+                return 0;  //because leaf doesn't have anything
+            }
+            int leftNodeHeight = height(root.left);
+            int rightNodeHeight = height(root.right);
+            int myHeight = Math.max(leftNodeHeight, rightNodeHeight) + 1;
+            return myHeight;
+        }
+
     }
 
 
@@ -159,11 +172,13 @@ public class createNode {
         System.out.println( " ");
         System.out.print("4. Level Order Traversal : ");
         levelOrder(root);
-
 //        count the nodes
         System.out.println("5. Count The Nodes : " + countOfNodes(root));
         //        Sum of the nodes
-        System.out.println("5. Count The Nodes : " + sumOfNodes(root));
+        System.out.println("6. Sum The Nodes : " + sumOfNodes(root));
+
+//        Print Height of the Tree
+        System.out.println("7. Height of Nodes : " + height(root));
 
     }
 }
