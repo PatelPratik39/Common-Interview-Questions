@@ -15,3 +15,42 @@
     - increases space utilization efficiency by conecting both the eneds of an array
     - best approcch for some scheduling and streaming tasks .
     - Time complexity - O(1) constant that is great and space complexity is O(n)
+
+# Binary Search Tree—(BST)
+    - its a data structure that facilitates fast look ups, addition, and deletion of elements.
+    -  it makes searching and sorting make super efficient,
+    - Each Node in a BST has most two children, reffered to as a left child and right child.
+
+    - The Left subtree of a node contains only nodes with keys less than the Node's key.
+    - The Right subtree of the node contains only node with keys greater than the node's key.
+    - BST does not allow any duplications.
+
+* Time Complexity of a Binary Search tree
+    *  Insert Operation :
+    -  to insert a new node, compare the node value with the root. if the value is less than node, then move it to the left side 
+    -  and if the value is greater than the node value, then move it to the right side. 
+    -  Repeat this step until an appropriate null subtree is found and insert the node there
+
+    *  Delete Operation:
+    * there are three cases of deletion
+                  - Leaf Node: Remove the node
+                  - Node with One Child: Remove the node and replace it with its child
+                  - Node with Two Child: Find the node's in order successor or in - order predecessor, swap the values with the node to be deleted and then remove the in-order successor / predecessor
+    
+    *    Search Operation : 
+                - To search for a value, compare it with the root, if value matches, the search is successful.
+                - if the value is less, continue searching in the left subtree
+                - if the value is greater, continue searching in the right subtree.
+                  - Time Complexity:
+                    - Best case: O(log n)
+                    - Average Case: O(log n)
+                    - Worst Case: O(n) -> if a tree becomes linkedList or Unbalanced
+        
+    *  Traversal (Time Complexity for traversal for all operations — O(n)) :
+        - In - order Traversal : Ascending Order like Left subtree -> Node -> Right Subtree
+        - Pre - Order Traversal : In the Order form like : Node -> Left Subtree -> right Subtree
+        - Post - Order Traversal: left subtree -> right subtree -> Node
+     
+*  Space Complexity for BST 
+  - The space complexity id linear as each node requires constant space
+    - O(n)
