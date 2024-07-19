@@ -113,9 +113,22 @@ public class createNode {
                     }
                 }
             }
+        }
+        //        Count of Node
+//    Time Complexity will be O(n)
+        public static int countOfNodes(Node root){
 
+            if(root ==null){
+                return 0;
+            }
+            int leftNode = countOfNodes(root.left);
+            int rightNode = countOfNodes(root.right);
+
+            return leftNode + rightNode + 1;
         }
     }
+
+
     public static void main ( String[] args ) {
         int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
 
@@ -134,5 +147,9 @@ public class createNode {
         System.out.println( " ");
         System.out.print("4. Level Order Traversal : ");
         levelOrder(root);
+
+//        count the nodes
+        System.out.println("5. Count The Nodes : " + countOfNodes(root));
+
     }
 }
