@@ -247,7 +247,7 @@ public class createNode {
         System.out.println("9. Diameter of Nodes : " + diameter(root));
 
         //        diameter of the node -> time Complexity = O(n)
-        System.out.println("10. Diameter of Nodes approch2 with O(n) TimeComplexity : " + diameter2(root).diam);
+        System.out.println("10. Diameter of Nodes approach2 with O(n) TimeComplexity : " + diameter2(root).diam);
 
     }
 }
