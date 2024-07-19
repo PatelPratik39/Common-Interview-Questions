@@ -1,5 +1,7 @@
 package BinaryTree;
 
+import java.util.*;
+
 import static BinaryTree.createNode.BinaryTree.*;
 
 public class createNode {
@@ -85,6 +87,33 @@ public class createNode {
             if(root == null){
                 return ;
             }
+//            create a Queue object using LinkedList for solid implementation
+            Queue<Node> queue = new LinkedList();
+//            initial root node and null to print new line for leveling BFS
+            queue.add(root);
+            queue.add(null);
+//            run a loop until queue gets empty
+            while(!queue.isEmpty()){
+                Node currNode = queue.remove();
+                if(currNode == null){
+                    System.out.println();
+//                    this condition will check if queue is completely empty
+                    if(queue.isEmpty()){
+                        break;
+                    } else {
+                        queue.add(null);
+                    }
+                } else {
+                    System.out.println(currNode.data);
+                    if (currNode.left != null){
+                        queue.add(currNode.left);
+                    }
+                    if(currNode.right != null){
+                        queue.add(currNode.right);
+                    }
+                }
+            }
+
         }
     }
     public static void main ( String[] args ) {
@@ -103,7 +132,7 @@ public class createNode {
         System.out.print("4. Post Order Traversal : ");
         postOrder(root);
         System.out.println( " ");
-        System.out.print("4. Post Order Traversal : ");
+        System.out.print("4. Level Order Traversal : ");
         levelOrder(root);
     }
 }
