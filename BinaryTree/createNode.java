@@ -151,6 +151,69 @@ public class createNode {
             return myHeight;
         }
 
+/*
+    Diameter of the Tree -> Time Complexity -> O(n^2) -> we calculate through linear approach, but we also calculate the hight additionally again
+    that why time complexity got increase
+    Approach #1 => diameter through root
+    Approach #2 => diameter Left Subtree
+    Approach #3 => diameter right Subtree
+ */
+        public static int diameter(Node root){
+
+            if(root == null){
+                return 0;
+            }
+//            need to calculate LeftSubtree, right Subtree + 1
+            int diameter1 = diameter(root.left);
+            int diameter2 = diameter(root.right);
+            int diameter3 = height(root.left)+height(root.right) + 1;
+
+            return Math.max(diameter3,Math.max(diameter1 , diameter2) + 1);
+        }
+/*
+    in Approach 2, I want to get time complexity = O(n)
+    i need to calculate Height and diameter together and pass it to the root nodes.
+
+    1.  need to create class first
+    2.
+ */
+    static class TreeInfo{
+        int hght;
+        int diam;
+
+        TreeInfo(int hght, int diam){
+            this.diam = diam;
+            this.hght = hght;
+        }
+    }
+
+    public static TreeInfo diameter2(Node root) {
+
+//        base case
+        if(root == null){
+            return new TreeInfo(0,0);
+        }
+        TreeInfo left = diameter2(root.left);
+        TreeInfo right = diameter2(root.right);
+
+        //calculate Height
+        int myHght = Math.max(left.hght, right.hght) + 1;
+
+        int diam1 = left.diam;
+        int diam2 = right.diam;
+
+//        Calculate of Diameter
+        int diam3 = left.hght + right.diam + 1;
+
+        int myDiam = Math.max(Math.max(diam1, diam2), diam3);
+
+        TreeInfo myInfo = new TreeInfo(myHght, myDiam);
+
+        return myInfo;
+
+    }
+
+
     }
 
 
@@ -170,15 +233,21 @@ public class createNode {
         System.out.print("4. Post Order Traversal : ");
         postOrder(root);
         System.out.println( " ");
-        System.out.print("4. Level Order Traversal : ");
+        System.out.print("5. Level Order Traversal : ");
         levelOrder(root);
 //        count the nodes
-        System.out.println("5. Count The Nodes : " + countOfNodes(root));
+        System.out.println("6. Count The Nodes : " + countOfNodes(root));
         //        Sum of the nodes
-        System.out.println("6. Sum The Nodes : " + sumOfNodes(root));
+        System.out.println("7. Sum The Nodes : " + sumOfNodes(root));
 
 //        Print Height of the Tree
-        System.out.println("7. Height of Nodes : " + height(root));
+        System.out.println("8. Height of Nodes : " + height(root));
+
+//        diameter of the node -> time Complexity = O(n^2)
+        System.out.println("9. Diameter of Nodes : " + diameter(root));
+
+        //        diameter of the node -> time Complexity = O(n)
+        System.out.println("10. Diameter of Nodes approch2 with O(n) TimeComplexity : " + diameter2(root).diam);
 
     }
 }
