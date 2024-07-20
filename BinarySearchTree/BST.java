@@ -47,8 +47,46 @@ public class BST {
         return true;
     }
 
+//    Delete Node
+    /*
+    Test case 1: No child (Leaf Node)
+    Test Case 2: One Child
+    Test Case 3: Two Children
+     */
+
+    public static Node delete(Node root, int val){
+//        search a node first that we want to delete
+        if(root.data > val){
+            root.left = delete(root.left, val);
+        } else if(root.data < val){
+            root.right = delete(root.right, val);
+        } else {
+            //root.data == val
+            if(root.left == root.right && root.right == null){
+                return null;
+            }
+//            case 2 -> One Child
+            if(root.left == null){
+                return root.right;
+            }else if(root.right == null){
+                return root.left;
+            }
+//            case 3
+            Node IS = inorderSuccessor(root.right);
+            root.data = IS.data;
+            root.right = delete(root.right, IS.data);
+        }
+        return root;
+    }
+    public static Node inorderSuccessor(Node root){
+        while(root.left != null){
+            root = root.left;
+        }
+        return root;
+    }
+
     public static void main ( String[] args ) {
-        int values[] = {5,1,3,4,2,8};
+        int values[] = {8,5,3,1,4,6,10,11,14};
         Node root = null; //initialize root with null value
 
 //      iterate over values[] an array to traverse the tree
@@ -65,5 +103,8 @@ public class BST {
         }else {
             System.out.println("What are your doing man!! Key, Not found!!!");
         }
+
+        delete(root,11);
+        inorder(root);
     }
 }
