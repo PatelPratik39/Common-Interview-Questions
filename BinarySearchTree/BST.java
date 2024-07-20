@@ -36,8 +36,19 @@ public class BST {
         inorder(root.right);
     }
 
+//    now Search the Key in BST
+    public static boolean search(Node root, int key){
+        if(root == null) return false;
+//        1. comparison with Node root with a key
+        if(root.data > key) return search(root.left, key);  // return left subtree
+        if(root.data < key) return search(root.right, key); // return right subtree
+        if(root.data == key) return true;
+
+        return true;
+    }
+
     public static void main ( String[] args ) {
-        int values[] = {5,1,3,4,2,7};
+        int values[] = {5,1,3,4,2,8};
         Node root = null; //initialize root with null value
 
 //      iterate over values[] an array to traverse the tree
@@ -48,5 +59,11 @@ public class BST {
 //        lets call inorder() method
         inorder(root);
         System.out.println();
+
+        if(search(root,3)){
+            System.out.println("Found !!!");
+        }else {
+            System.out.println("What are your doing man!! Key, Not found!!!");
+        }
     }
 }
