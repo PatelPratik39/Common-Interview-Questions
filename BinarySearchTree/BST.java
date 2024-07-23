@@ -1,5 +1,7 @@
 package BinarySearchTree;
 
+import java.util.ArrayList;
+
 public class BST {
 
 //    create Node Structure
@@ -24,7 +26,7 @@ public class BST {
         }else {
             root.right = insert(root.right, val);
         }
-        return root; //returninmg root
+        return root; //returning root
     }
 //    now check if our insert function works correctly or not lets travers the node using Inorder traversal  function
     public static void inorder(Node root) {
@@ -101,6 +103,33 @@ public class BST {
         }
     }
 
+//    Root to leaf
+//    Helper function
+
+    public static void printPath(ArrayList<Integer> path){
+        for (int i=0; i < path.size(); i++){
+            System.out.print(path.get(i) + " -> ");
+        }
+        System.out.println();
+    }
+
+    public static void printRootToLeaf( Node root, ArrayList<Integer> path) {
+
+        //base case
+        if(root == null){
+            return;
+        }
+        path.add(root.data); // add current node data to path
+//        leaf is empty
+        if(root.left == null && root.right == null){
+            printPath(path);
+        }else {  //if NOT a leaf
+            printRootToLeaf(root.left, path);
+            printRootToLeaf(root.right,path);
+        }
+        path.remove(path.size() - 1);  //remove the path once find the path to backtrack the path
+    }
+
     public static void main ( String[] args ) {
         int values[] = {8,5,3,1,4,6,10,11,14};
         Node root = null; //initialize root with null value
@@ -111,8 +140,8 @@ public class BST {
         }
 
 //        lets call inorder() method
-        inorder(root);
-        System.out.println();
+//        inorder(root);
+//        System.out.println();
 //
 //        if(search(root,3)){
 //            System.out.println("Found !!!");
@@ -123,6 +152,8 @@ public class BST {
 //        delete(root,11);
 //        inorder(root);
 
-        printInRange(root, 3, 10);
+//        printInRange(root, 3, 10);
+
+        printRootToLeaf(root,new ArrayList<>());
     }
 }
