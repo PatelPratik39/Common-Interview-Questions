@@ -7,7 +7,6 @@ Find a path from root to leaf
 import java.util.ArrayList;
 
 public class PathFromRootToLeaf {
-    Node root;
 
     static class Node{
         int data;
@@ -45,7 +44,7 @@ public class PathFromRootToLeaf {
 //        iterate over the arraylist to print each element for the path
 
         for(int i = 0; i < path.size(); i++){
-            System.out.print(path.get(i) + " => ");
+            System.out.print(path.get(i) + " --> ");
         }
         System.out.println();
     }
