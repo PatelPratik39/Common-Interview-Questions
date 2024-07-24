@@ -63,16 +63,41 @@ public class TRIEDemo {
         }
         return true;
     }
+    /*
+         wordBreak()
+         */
+
+
+    public static boolean wordBreak(String key){
+        if(key.length() == 0){
+            return true;
+        }
+//    i need to slice each character
+        for(int i = 0; i <= key.length(); i++){
+            String firstPart = key.substring(0,i);  //0-1
+            String secondPart = key.substring(i);
+
+            if(search(firstPart) && wordBreak(secondPart)){
+                return true;
+            }
+        }
+        return false;
+    }
 
     public static void main ( String[] args ) {
-        String words[] = {"the", "a", "there", "their", "any", "them", "then"};
+//        String words[] = {"the", "a", "there", "their", "any", "them", "then"};
+
+        String words[] = {"i", "like", "sam", "samsung", "mobile"};
+        String key = "ilikesamsung";
+
         for(int i=0; i< words.length;i++){
             insert(words[i]);
         }
-        System.out.println(search("their"));
-        System.out.println(search("them"));
-        System.out.println(search("thor"));
-        System.out.println(search("an"));
+        System.out.println(wordBreak(key));
+//        System.out.println(search("their"));
+//        System.out.println(search("them"));
+//        System.out.println(search("thor"));
+//        System.out.println(search("an"));
     }
 }
 }
