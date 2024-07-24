@@ -62,3 +62,21 @@
 #  what is Breadth First Search (BFS)?
     - PreOrder,InORder, PostOrder are known as BreadthFirst Search
 -   Time Complexity is linear so O(n)
+
+# TRIE Data Structure
+-   TRIE is a powerful data structure for storing and querying strings efficiently, especially when we are dealing with prefix-based searches.
+-  store and retrieve keys in a dataset of a string manner.
+- commonly used in applications that involve dictionary-like structures, such as autocomplete systems and spell checks
+    *   Feature of TRIE Data structure
+        - Prefix-based storage: a TRIE stores string in such a manner that common prefixes are shared easily that helps in
+                                reducing time complexity when multiple strings share common prefixes.
+        - Nodes and Edges: Each Node in TRIE represent a single character of a string.
+                           Edge between nodes represent the connection between characters.
+        - Root Node: In TRIE Data structure, Root Node remains empty which represents the beginning of all strings.
+        - End of word Marker: Nodes often have end of word marker to indicate that end of valid word.
+  
+    *   Structure of TRIE DATA STRUCTURE
+        - Node: Each Node in the TRIE has seperate map of an Array of child Nodes.
+        - The Node includes a boolean flag to indicate if the node represents the end of a valid word
+        - Edges: represents the pointer from one node to another character to the next line of the string.
+    * Space Complexity: O(L) = O(n) because common prefixes are stored only once
