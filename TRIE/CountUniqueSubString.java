@@ -100,10 +100,10 @@ public class CountUniqueSubString {
 
 
 //        String str = "ababa";
-        String str = "apple";
+        String str = "BANANA";
         //to get all suffixes from a string, I need to iterate over string using for loop
         for(int i =0; i < str.length(); i++){
-            String suffix = str.substring(i);
+            String suffix = str.substring(i).toLowerCase();
             insert(suffix);
             System.out.println(suffix);
        }
