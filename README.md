@@ -80,3 +80,16 @@
         - The Node includes a boolean flag to indicate if the node represents the end of a valid word
         - Edges: represents the pointer from one node to another character to the next line of the string.
     * Space Complexity: O(L) = O(n) because common prefixes are stored only once
+
+# Sorting
+    * Bubble Sort => 
+        -   Bubble sort repeatedly steps through the list
+        -   compares the adjacent elements and swaps them if they are in incorrect order.
+        -   This process continues untill no more swaps are needed means sorted
+        -   If array is sorted then Time compexity will be O(n) otherwise O(n^2)
+    * Selection Sort =>  
+    * Insertion Sort =>  
+        -   It takes an array which is divided by into sorted array and unsorted array.
+        -   0th index consider as a sorted array and rest of the elements are consider as unsorted array.
+        -   in Insertion sort we are comparing each element from unsorted array to sorted array element.
+        -   if an element from unsorted array is smaller than sorted array! push back the sorted array element and add an element which is smaller thna elements from sorted array.
