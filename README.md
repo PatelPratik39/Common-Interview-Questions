@@ -82,14 +82,23 @@
     * Space Complexity: O(L) = O(n) because common prefixes are stored only once
 
 # Sorting
-    * Bubble Sort => 
+
+    * Bubble Sort =>
         -   Bubble sort repeatedly steps through the list
         -   compares the adjacent elements and swaps them if they are in incorrect order.
         -   This process continues untill no more swaps are needed means sorted
-        -   If array is sorted then Time compexity will be O(n) otherwise O(n^2)
+        -   If array is sorted then Time compexity will be O(n) otherwise O(n^2).
+
     * Selection Sort =>  
     * Insertion Sort =>  
         -   It takes an array which is divided by into sorted array and unsorted array.
         -   0th index consider as a sorted array and rest of the elements are consider as unsorted array.
         -   in Insertion sort we are comparing each element from unsorted array to sorted array element.
-        -   if an element from unsorted array is smaller than sorted array! push back the sorted array element and add an element which is smaller thna elements from sorted array.
+        -   if an element from unsorted array is smaller than sorted array! push back the sorted array element 
+            and add an element which is smaller thna elements from sorted array.
+
+# Recursion 
+    
+*   What is Recursion?? -> a function that calls itself that is recursion in java
+  * f(f(x)) = f(x^2) => x = 2 => f(2^2) = f(4) => 4^2 = 16. so, f(f(x)) = 16 ,if x = 2
+  * 
