@@ -1,5 +1,10 @@
 package Quick_Sort;
 
+
+/*
+    Time Complexity in worst case = O(n2)  -> depend on if pivot is the smallest element or largest element
+    Time Complexity in average case = O( n log n)
+ */
 public class QuickSort2 {
 
     public static int partition(int arr[], int low, int high){
@@ -9,7 +14,7 @@ public class QuickSort2 {
         for (int j = low; j < high; j++){
             if(arr[j] < pivot){
                 i++;
-//                swapp
+//                swap
                 int temp  = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
