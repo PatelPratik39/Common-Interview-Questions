@@ -101,4 +101,6 @@
     
 *   What is Recursion?? -> a function that calls itself that is recursion in java
   * f(f(x)) = f(x^2) => x = 2 => f(2^2) = f(4) => 4^2 = 16. so, f(f(x)) = 16 ,if x = 2
-  * 
+
+# Merge Sort
+* Divide and Conquer approch
