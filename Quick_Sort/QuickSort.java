@@ -39,7 +39,7 @@ public class QuickSort {
         int n = arr.length;
         System.out.println(n);
 
-        quickSort(arr, 0 , n-1);   // i took high = n-1 because, length of an array is always n-1 that starts from i = 0;
+        quickSort(arr, 0 , n-1);   // i took high = n-1 because the length of an array is always n-1 that starts from i = 0;
 
 //        print array
         for(int i : arr){
