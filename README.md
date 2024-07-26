@@ -103,4 +103,10 @@
   * f(f(x)) = f(x^2) => x = 2 => f(2^2) = f(4) => 4^2 = 16. so, f(f(x)) = 16 ,if x = 2
 
 # Merge Sort
-* Divide and Conquer approch
+* Divide and Conquer approach
+
+# Quick Sort
+* Pivot and Partition Approach
+
+# Graph Data Structure
+    - create a graph following Adjacency List
