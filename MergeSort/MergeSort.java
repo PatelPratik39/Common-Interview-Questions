@@ -2,6 +2,7 @@ package MergeSort;
 
 public class MergeSort {
 
+//    nlog n
     public static void conquer(int arr[], int si, int mid, int ei) {
         // New array to store sorted elements
         int merged[] = new int[ei - si + 1];
@@ -10,6 +11,7 @@ public class MergeSort {
         int x = 0;     // Index for the merged array
 
         // Merge two halves
+//        O(n) time complexity
         while (idx1 <= mid && idx2 <= ei) {
             if (arr[idx1] <= arr[idx2]) {
                 merged[x++] = arr[idx1++];
@@ -39,6 +41,7 @@ public class MergeSort {
             return;
         }
 
+//        Time complexity = //O(log n)
         int mid = si + (ei - si) / 2;  // Get the middle index
         divide(arr, si, mid);          // Recursively divide the first half
         divide(arr, mid + 1, ei);      // Recursively divide the second half
