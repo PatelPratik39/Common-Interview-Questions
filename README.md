@@ -82,20 +82,21 @@
     * Space Complexity: O(L) = O(n) because common prefixes are stored only once
 
 # Sorting
+  
+*   Bubble Sort => 
+  - Bubble sort repeatedly steps through the list
+  - compares the adjacent elements and swaps them if they are in incorrect order.
+  - This process continues until no more swaps are needed means sorted.
+  - If an array is sorted, then Time complexity will be O(n) otherwise O(n^2).
 
-    * Bubble Sort =>
-        -   Bubble sort repeatedly steps through the list
-        -   compares the adjacent elements and swaps them if they are in incorrect order.
-        -   This process continues untill no more swaps are needed means sorted
-        -   If array is sorted then Time compexity will be O(n) otherwise O(n^2).
+* Selection Sort =>
 
-    * Selection Sort =>  
-    * Insertion Sort =>  
-        -   It takes an array which is divided by into sorted array and unsorted array.
-        -   0th index consider as a sorted array and rest of the elements are consider as unsorted array.
-        -   in Insertion sort we are comparing each element from unsorted array to sorted array element.
-        -   if an element from unsorted array is smaller than sorted array! push back the sorted array element 
-            and add an element which is smaller thna elements from sorted array.
+* Insertion Sort =>
+  - It takes an array which is divided by into a sorted array and unsorted array.
+  - 0th index is considered as a sorted array, and the rest of the elements are considered as an unsorted array.
+  - in Insertion sort, we are comparing each element from an unsorted array to a sorted array element.
+  - if an element from unsorted array is smaller than a sorted array! push back the sorted array element
+    and add an element which is smaller than elements from a sorted array.
 
 # Recursion 
     
@@ -109,4 +110,4 @@
 * Pivot and Partition Approach
 
 # Graph Data Structure
-    - create a graph following Adjacency List
+* create a graph following Adjacency List
