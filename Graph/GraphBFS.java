@@ -69,17 +69,36 @@ public class GraphBFS {
 
     }
 
+//    DFS
+    public static void dfs(ArrayList<Edge> graph[], int currentNode, boolean visited[]){
+        System.out.print(currentNode + " - ");
+        visited[currentNode] = true;
+
+//        to visit neighbors for current, i need to iterate over loop
+        for (int i = 0; i < graph[currentNode].size(); i++){
+            Edge edge = graph[currentNode].get(i);
+            if(visited[edge.destination] == false){
+                dfs(graph,edge.destination,visited);
+            }
+        }
+    }
 
     public static void main ( String[] args ) {
         int V = 7;
-        boolean visited[] = new boolean[V];
+
 
         ArrayList<Edge> graph[] = new ArrayList[V];
         createGraph(graph);
 
-        for(int i=0; i <V; i++){
-            bfs(graph, V,visited,i );
+        boolean visited[] = new boolean[V];
+        for(int i=0; i < V; i++){
+            if(visited[i] == false){
+//                bfs(graph, V,visited,i );
+                dfs(graph,i,visited);
+            }
+//            bfs(graph, V,visited,i );
         }
+//        dfs(graph,0,visited);
 
 //        bfs(graph, V);
         System.out.println();
