@@ -37,26 +37,44 @@ public class CycleInGraph {
         graph[5].add(new Edge(5,4));
     }
 
-    public static boolean isCycleDirected(ArrayList<Edge> graph[], boolean visited[], int currentNode, int par){
+
+    public static boolean isCycleUnDirected(ArrayList<Edge> graph[], boolean visited[], int currentNode, int parent) {
         visited[currentNode] = true;
 
-        for(int i = 0; i < graph[currentNode].size(); i++){
+        for(int i = 0; i< graph[currentNode].size(); i++){
             Edge edge = graph[currentNode].get(i);
-            if(visited[edge.destination] && edge.destination != par){
+
+            if(visited[edge.destination] && edge.destination != parent){
                 return true;
-            } else if (!visited[edge.destination]) {
-                if(isCycleDirected(graph,visited,edge.destination,currentNode)){
+            } else if ( !visited[edge.destination]) {
+                if(isCycleUnDirected(graph, visited, edge.destination, currentNode)) {
                     return true;
                 }
             }
         }
-        return false;  // if i can not find a cycle then return false
+            return false;
     }
+
+//    public static boolean isCycleUnDirected(ArrayList<Edge> graph[], boolean visited[], int currentNode, int parent){
+//        visited[currentNode] = true;
+//
+//        for(int i = 0; i < graph[currentNode].size(); i++){
+//            Edge edge = graph[currentNode].get(i);
+//            if(visited[edge.destination] && edge.destination != parent){
+//                return true;
+//            } else if (!visited[edge.destination]) {
+//                if(isCycleUnDirected(graph,visited,edge.destination,currentNode)){
+//                    return true;
+//                }
+//            }
+//        }
+//        return false;  // if i can not find a cycle then return false
+//    }
 
     public static void main ( String[] args ) {
         int V = 6;
         ArrayList<Edge> graph[] = new ArrayList[V];
         createGraph(graph);
-        System.out.println(isCycleDirected(graph,new boolean[V],0,-1));
+        System.out.println(isCycleUnDirected(graph,new boolean[V],0,-1));
     }
 }
