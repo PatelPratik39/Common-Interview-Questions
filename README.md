@@ -111,3 +111,11 @@
 
 # Graph Data Structure
 * create a graph following Adjacency List
+
+# Dijkstra's Algorithm to find the shortest Distance from source to destination.
+*   TimeComplexity is O(E + E logV)
+
+# BellmanFord's Algorithm to find the shortest Distance from source to destination.
+* it allows negavtive distances
+* does not allow negative weight
+* time Complexity O(V*E)
