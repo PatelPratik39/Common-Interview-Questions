@@ -85,7 +85,7 @@ public class DijKstraAlgorithm {
 //        using bfs
 //        while loop will run until my priorityQueue gets empty
         while(!priorityQueue.isEmpty()){
-            Pair currentPair = priorityQueue.remove();  //the shortest air needs to be removed from the priorityQueue
+            Pair currentPair = priorityQueue.remove();  //the shortest pair needs to be removed from the priorityQueue
 
             //if condition checks if currentPair of Node is not visited, then make it visited true first of all the thing,
 //            then find out neighbors of the current node and update them
@@ -93,7 +93,7 @@ public class DijKstraAlgorithm {
                 visited[currentPair.node] = true;
 
 //                find out the neighbor of currentPair nodes and iterate over the size of Neighbors
-                for(int i = 0; i< graph[currentPair.node].size(); i++){
+                for(int i = 0; i < graph[currentPair.node].size(); i++){
                     Edge edge = graph[currentPair.node].get(i);   // get the Edge of currentPair Node
                     // now, I need to set integer type u to an edge source and integer type of v to-edge destination.
                     int u = edge.source;

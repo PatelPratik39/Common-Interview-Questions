@@ -49,12 +49,12 @@ public class DijkstraSAlgorithm {
 //            return p2.distance - this.distance;  //descending
         }
     }
-// Time COmplexity O(E + E logV)
-    public static void dijkstra(ArrayList<Edge> graph[], int src, int V){
+// Time CComplexity O(E + E logV)
+    public static void dijkstra(ArrayList<Edge> graph[], int source, int V){
             PriorityQueue<Pair> priorityQueue = new PriorityQueue<>();
             int distnace[] = new int[V];
             for(int i =0; i < V; i++){
-                if(i != src){
+                if(i != source){
                     distnace[i] = Integer.MAX_VALUE;
                 }
             }
