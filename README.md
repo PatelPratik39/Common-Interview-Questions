@@ -114,6 +114,7 @@
 
 # Dijkstra's Algorithm to find the shortest Distance from source to destination.
 *   TimeComplexity is O(E + E logV)
+* Dijkstra's Algorithm: Finds shortest paths from a source to all nodes.
 
 # BellmanFord's Algorithm to find the shortest Distance from source to destination.
 * it allows negavtive distances
@@ -126,3 +127,6 @@
  * Prim's Algorithm is the example of MST
 
 # Prim's Algorithm
+*   Prim's Algorithm: Finds the minimum spanning tree of a graph.
+*   Time Complexity:  𝑂((𝑉+𝐸)log𝑉)
+*   Space Complexity: 𝑂(𝑉+𝐸)

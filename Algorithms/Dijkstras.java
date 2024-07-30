@@ -35,7 +35,7 @@ public class Dijkstras {
         graph[4].add(new Edge(4,5,5));
     }
 
-//    implement Dijkstra's Algorithm
+//    implement Dijkstra's Algorithm: Time Complexity O((V+E) logV)  and space complexity O(V)
 
     public static class Pair implements Comparable<Pair> {
         int node;
