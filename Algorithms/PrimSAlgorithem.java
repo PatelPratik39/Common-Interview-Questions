@@ -1,9 +1,10 @@
 package Algorithms;
 
-import java.util.ArrayList;
-import java.util.PriorityQueue;
+import java.util.*;
 
-public class PrimSAlgorithm {
+
+public class PrimSAlgorithem {
+
     static class Edge{
         int source;
         int destination;
@@ -16,8 +17,8 @@ public class PrimSAlgorithm {
         }
     }
 
-    public static void createGraph(ArrayList<Edge> graph[]){
-        for(int i=0; i < graph.length; i++){
+    public static void createGraph(ArrayList<Edge>graph[]){
+        for(int i = 0; i< graph.length; i++){
             graph[i] = new ArrayList<>();
         }
         graph[0].add(new Edge(0,1,10));
@@ -33,57 +34,57 @@ public class PrimSAlgorithm {
         graph[3].add(new Edge(3,1,40));
         graph[3].add(new Edge(3,2,50));
     }
-//    Prims Algorithm implementation
+
+//    Prim's Algorithm implementation
 
     public static class Pair implements Comparable<Pair>{
         int node;
         int cost;
 
-        public Pair ( int node, int cost ) {
+        public Pair(int node, int cost) {
             this.node = node;
             this.cost = cost;
         }
 
-//        comparing based on cost so priority queue can sort based on the lowest cost
         @Override
         public int compareTo ( Pair pair2 ) {
             return this.cost - pair2.cost;   //ascending order
         }
     }
 
-//    Time Complexity of Prims Algorithm is : O(E log E)
-
-    public static void primsAlgo(ArrayList<Edge> graph[], int V){
-        PriorityQueue<Pair> priorityQueue = new PriorityQueue <>();  // non mst
+    public static void primSAlgo(ArrayList<Edge> graph[], int V){
+        PriorityQueue<Pair> priorityQueue = new PriorityQueue<>();
         boolean visited[] = new boolean[V];
+//        add an initial pair into priorityQueue
         priorityQueue.add(new Pair(0,0));
 
+//        I need to find the lowest cost of the MST
         int mstCost = 0;   //initialize a mstcost as 0
 
-        while(!priorityQueue.isEmpty()){
-            Pair currentPair = priorityQueue.remove();
+        while (!priorityQueue.isEmpty()){
+            Pair currentPair = priorityQueue.poll();
 
             if(!visited[currentPair.node]){
                 visited[currentPair.node] = true;
                 mstCost += currentPair.cost;
 
-                for (int i=0; i <graph[currentPair.node].size(); i++){
+                for(int i = 0; i < graph[currentPair.node].size(); i++){
                     Edge edge = graph[currentPair.node].get(i);
-                    if(!visited[edge.destination]){
+                    if (!visited[edge.destination]){
                         priorityQueue.add(new Pair(edge.destination, edge.weight));
                     }
                 }
             }
         }
-        System.out.println("Minimum Cost of MST = " + mstCost);
+
+        System.out.println("Find the Minimum COST of MSt : " + mstCost);
 
     }
 
-
     public static void main ( String[] args ) {
         int V = 4;
-        ArrayList<Edge> graph[] = new ArrayList[V];
+        ArrayList<Edge > graph[] = new ArrayList[V];
         createGraph(graph);
-        primsAlgo(graph, V);
+        primSAlgo(graph,V);
     }
 }
