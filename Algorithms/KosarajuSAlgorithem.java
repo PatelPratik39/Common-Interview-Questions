@@ -24,9 +24,10 @@ public class KosarajuSAlgorithem {
 
         graph[1].add(new Edge(1,0));
 
-        graph[2].add(new Edge(2,2));
+        graph[2].add(new Edge(2,1));
 
         graph[3].add(new Edge(3,4));
+//        graph[4].add(new Edge(4,0));
     }
 
 //    Topological sorting contains 4 parameters always, array, currentNode, visited[], stack
@@ -89,9 +90,10 @@ public class KosarajuSAlgorithem {
         while(!stack.isEmpty()){
             int currentNode = stack.pop();
             if(!visited[currentNode]){
-                dfs(graph,visited, currentNode);
+                dfs(transposedGraph,visited, currentNode);
+                System.out.println();
             }
-            System.out.println();
+//            System.out.println();
         }
 
     }
