@@ -1,5 +1,6 @@
 /*
-
+        Tower of Hanoi Theorem
+        1 if we have 1 disk then transfer directly otherwise use helper tower to store disks
  */
 
 package Recursion;
