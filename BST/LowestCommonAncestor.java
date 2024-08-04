@@ -27,7 +27,7 @@
 package BST;
 
 public class LowestCommonAncestor {
-    Node root;
+
     static class Node{
         int data;
         Node left, right;
@@ -63,8 +63,8 @@ public class LowestCommonAncestor {
         root.left.right.left = new Node(10);
         root.left.right.right = new Node(14);
 
-//        int n1 = 10, n2 = 14;
-        int n1 = 10, n2 = 22;
+        int n1 = 10, n2 = 14;
+//        int n1 = 10, n2 = 22;
         Node t = tree.findLCA(root, n1, n2);
         if (t != null)
             System.out.println("LCA of " + n1 + " and " + n2 + " is " + t.data);
