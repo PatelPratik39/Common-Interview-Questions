@@ -12,6 +12,8 @@
         Explanation: 8 is the closest node to both 8 and 14
         which is a ancestor of both the nodes.
 
+        Time Complexity - O(H)
+
         // Constructing the following BST:
         //        20
         //       /  \

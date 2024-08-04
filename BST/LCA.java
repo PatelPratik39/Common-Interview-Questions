@@ -12,12 +12,8 @@ public class LCA {
     }
 
     private Node findLCA ( Node root, int n1, int n2 ) {
-
-        if(root == null){
-            return null;
-        }
-
-        if(root.data < n1 && root.data < n2) return findLCA(root.right,n1,n2);
+        if (root == null) return null;  //base case
+        if (root.data < n1 && root.data < n2) return findLCA(root.right,n1,n2);
         if (root.data > n1 && root.data > n2) return findLCA(root.left, n1, n2);
         return root;
     }
