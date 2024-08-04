@@ -1,6 +1,7 @@
 
 /*
         Print keypad combination
+        Time Complexity => O(4^n)
  */
 
 
@@ -27,7 +28,7 @@ public class Recursion8 {
     }
 
     public static void main ( String[] args ) {
-        String str = "23";
+        String str = "39";
         printCombination(str,0,"");
 
     }
