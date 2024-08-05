@@ -25,7 +25,7 @@ public class Memoization {
         System.out.println("addTo80: " + memo.addTo80(5));
 
         System.out.println("memoizeAddTo80: " + memo.memoizeAddTo80(5));
-        System.out.println("memoizeAddTo80: " + memo.memoizeAddTo80(5));
-        System.out.println("memoizeAddTo80: " + memo.memoizeAddTo80(5));
+        System.out.println("memoizeAddTo80: " + memo.memoizeAddTo80(15));
+        System.out.println("memoizeAddTo80: " + memo.memoizeAddTo80(25));
     }
 }
