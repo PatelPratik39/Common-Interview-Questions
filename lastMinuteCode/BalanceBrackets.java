@@ -5,19 +5,44 @@ import java.util.Stack;
 
 public class BalanceBrackets {
 
+//    private static String isBalance ( String str ) {
+////        create a Stack
+//        Stack<Character> stack = new Stack <>();
+//
+//        for(char c : str.toCharArray()){
+//            if(c == '(' || c == '{' || c == '[') {
+//                stack.push(c);
+//            } else {
+//                if(stack.isEmpty()){
+//                    return "NO";
+//                }
+//                char top = stack.pop();
+//                if(!isMatchingPair(top, c)){
+//                    return "NO";
+//                }
+//            }
+//        }
+//        return stack.isEmpty() ? "YES" : "NO";
+//    }
+//
+//    public static boolean isMatchingPair(char open, char close){
+//        return (open == '(' && close == ')') ||
+//                (open == '{' && close == '}') ||
+//                (open == '[' && close == ']');
+//    }
+
     private static String isBalance ( String str ) {
-//        create a Stack
         Stack<Character> stack = new Stack <>();
 
         for(char c : str.toCharArray()){
-            if(c == '(' || c == '{' || c == '[') {
+            if(c == '(' || c == '{' || c =='['){
                 stack.push(c);
-            } else {
+            }else {
                 if(stack.isEmpty()){
                     return "NO";
                 }
-                char top = stack.pop();
-                if(!isMatchingPair(top, c)){
+//                char top = stack.pop();
+                if(!isMatchingPair(stack.pop(), c)){
                     return "NO";
                 }
             }
@@ -25,10 +50,10 @@ public class BalanceBrackets {
         return stack.isEmpty() ? "YES" : "NO";
     }
 
-    public static boolean isMatchingPair(char open, char close){
-        return (open == '(' && close == ')') ||
+    private static boolean isMatchingPair ( char open, char close ) {
+        return ( open == '(' && close ==')' )||
                 (open == '{' && close == '}') ||
-                (open == '[' && close == ']');
+                (open == '[' && close ==']');
     }
 
     public static void main ( String[] args ) {
@@ -42,6 +67,8 @@ public class BalanceBrackets {
         }
         scanner.close();
     }
+
+
 
 
 }
