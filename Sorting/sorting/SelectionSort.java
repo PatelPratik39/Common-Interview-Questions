@@ -49,7 +49,7 @@ public class SelectionSort {
 
 
     public static void main ( String[] args ) {
-        int arr[] = {64,25,12,22,11,9, 5, 6, 2, 33, 4 };
+        int arr[] = {64,25,12,2,22,64,22,11,9, 5, 6, 2, 33, 4 };
         System.out.print("Original array: ");
         printArray(arr);
         selectionSort(arr);
