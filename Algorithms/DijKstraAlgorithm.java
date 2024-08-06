@@ -71,7 +71,7 @@ public class DijKstraAlgorithm {
 
 
     public static void dijkstra(ArrayList<Edge> graph[], int source, int V){
-        PriorityQueue<Pair> priorityQueue = new PriorityQueue<>();   //storing whole Pair form Pair class as Priority Queue
+        PriorityQueue<Pair> priorityQueue = new PriorityQueue<>();   //storing whole Pair from Pair class as Priority Queue
         int distance[] = new int [V];    //distance[] matrix that contains all the Vertexes
         for(int i =0; i < V; i++){
             if(i != source){
@@ -98,7 +98,7 @@ public class DijKstraAlgorithm {
                     // now, I need to set integer type u to an edge source and integer type of v to-edge destination.
                     int u = edge.source;
                     int v = edge.destination;
-//                    relegation code logic goes here
+//                    Relexation code logic goes here
                     if(distance[u] + edge.weight < distance[v] ){
                         distance[v] = distance[u]+ edge.weight;  //update the distance of v
 //                        now add the updated distance to priorityQueue
@@ -108,7 +108,7 @@ public class DijKstraAlgorithm {
             }
         }
 
-//        now I want to print the shortest distance so I am iterating over V
+//        now I want to print the shortest distance, so I am iterating over V
         for(int i=0; i < V; i++){
             System.out.print(distance[i]+ " ");
         }
