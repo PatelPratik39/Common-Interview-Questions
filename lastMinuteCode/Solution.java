@@ -4,6 +4,7 @@ package lastMinuteCode;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Scanner;
 
 public class Solution {
 
@@ -16,6 +17,19 @@ public class Solution {
             this.left = null;
             this.right = null;
         }
+    }
+
+
+    public Node insert(Node root, int value){
+        if(root == null) {
+            return new Node(value);
+        } else if( value <= root.data){
+            root.left = insert(root.left, value);
+        } else{
+            root.right = insert(root.right, value);
+        }
+        return root;
+
     }
     private void levelOrderTraversal ( Node root ) {
         if(root == null) return;
@@ -39,15 +53,26 @@ public class Solution {
     }
 
     public static void main ( String[] args ) {
+
+        Scanner scanner  =new Scanner(System.in);
         Solution tree = new Solution();
 
-        Node root = new Node(1);
-        root.right = new Node(2);
-        root.right.right = new Node(5);
-        root.right.right.left = new Node(3);
-        root.right.right.right = new Node(6);
-        root.right.right.left.right = new Node(4);
+//        Node root = new Node(1);
+        Node root = null;
 
+        int nodes = scanner.nextInt();
+
+        for(int i=0; i < nodes; i++){
+            int value= scanner.nextInt();
+            root = tree.insert(root,value);
+        }
+
+//        root.right = new Node(2);
+//        root.right.right = new Node(5);
+//        root.right.right.left = new Node(3);
+//        root.right.right.right = new Node(6);
+//        root.right.right.left.right = new Node(4);
+//
         tree.levelOrderTraversal(root);
     }
 
