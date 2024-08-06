@@ -56,10 +56,14 @@ public class MergeSort {
 
         divide(arr, 0, n - 1);
 
-        // Print sorted array
-        for (int i = 0; i < n; i++) {
-            System.out.print(arr[i] + " ");
+        // Print a sorted array
+
+        for(int num : arr){
+            System.out.print(num + " ");
         }
+//        for (int i = 0; i < n; i++) {
+//            System.out.print(arr[i] + " ");
+//        }
         System.out.println();
     }
 }
